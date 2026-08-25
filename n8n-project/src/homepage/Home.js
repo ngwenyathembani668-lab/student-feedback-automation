@@ -91,7 +91,7 @@ const Home = () => {
       <section className="feedback-shell" aria-labelledby="feedback-title">
         <div className="intro-panel">
           <span className="eyebrow">Student voice / 01</span>
-          <h1 id="feedback-title">Shape what comes next.</h1>
+          <h1 id="feedback-title">Shape what come next.</h1>
           <p>Your perspective helps us make every course clearer, more useful, and more human.</p>
           <div className="intro-rule" />
           <p className="intro-note">A thoughtful response takes less than two minutes.</p>
