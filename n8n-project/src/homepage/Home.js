@@ -1,10 +1,6 @@
 import React, { useState } from 'react'
 
-// The n8n webhook URL is injected at build time via an environment variable.
-// Locally: define REACT_APP_N8N_WEBHOOK_URL in a .env.local file (see README).
-// In production: set REACT_APP_N8N_WEBHOOK_URL in your hosting provider's dashboard.
-// NOTE: react-scripts (CRA) only exposes vars prefixed with REACT_APP_ to the client bundle,
-// and env files are only read at build/start time (restart the dev server after editing them).
+
 const N8N_WEBHOOK_URL = process.env.REACT_APP_N8N_WEBHOOK_URL
 
 if (!N8N_WEBHOOK_URL) {
