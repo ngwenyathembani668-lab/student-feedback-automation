@@ -1,7 +1,19 @@
 import React, { useState } from 'react'
 
-// Replace this placeholder with the production webhook URL from n8n.
-export const N8N_WEBHOOK_URL = 'https://studentfeedbackauto.app.n8n.cloud/webhook-test/student-feedback'
+// The n8n webhook URL is injected at build time via an environment variable.
+// Locally: define REACT_APP_N8N_WEBHOOK_URL in a .env.local file (see README).
+// In production: set REACT_APP_N8N_WEBHOOK_URL in your hosting provider's dashboard.
+// NOTE: react-scripts (CRA) only exposes vars prefixed with REACT_APP_ to the client bundle,
+// and env files are only read at build/start time (restart the dev server after editing them).
+const N8N_WEBHOOK_URL = process.env.REACT_APP_N8N_WEBHOOK_URL
+
+if (!N8N_WEBHOOK_URL) {
+  // eslint-disable-next-line no-console
+  console.error(
+    'Missing REACT_APP_N8N_WEBHOOK_URL environment variable. ' +
+      'Set it in .env.local for development or in your hosting provider dashboard for production.'
+  )
+}
 
 const initialForm = {
   studentName: '',
